@@ -39,7 +39,7 @@ Faça o download do pacote referente ao sistema operacional que você utiliza.
 #### 2) Download do Projeto
 Você pode realizar o download da Stack através do link:
 
-* https://github.com/alejunio/terraform-ansible-wordpress-digitalocean/archive/main.zip
+* https://github.com/alejunio/Terraform-Ansible-Vultr-WordPress/archive/refs/heads/main.zip
 
 
 ## Configurações na Stack

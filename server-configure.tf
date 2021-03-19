@@ -1,8 +1,9 @@
 ##############################################################################
-# Configuracao do Droplet
+# Automacao Ansible
 ##############################################################################
 
 
+// Conexao no Servidor e automacao Ansible
 resource "null_resource" "servidor-vultr" {
   triggers = {
     ip_address = vultr_instance.my_instance.main_ip

@@ -1,5 +1,8 @@
 ##############################################################################
-# Create a web server
+# Web Server
+##############################################################################
+
+// Recursos do Servidor
 resource "vultr_instance" "my_instance" {
     plan = "vc2-1c-1gb"
     region = "mia"

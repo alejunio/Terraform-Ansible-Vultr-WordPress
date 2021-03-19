@@ -2,17 +2,17 @@
 
 ![alt text](https://github.com/alejunio/Terraform-Ansible-Vultr-WordPress/blob/main/img/automacao-wordpress-vultr.jpg)
 
-**Infraestrutura como código (IaC)** é uma realidade atualmente, e vem para ajudar a acelerar os processos na criação e configuração de ambientes de infraestrutura. Quando unimos o Terraform(automacao infra) com Ansible(automacao configuracoes), temos uma solução perfeita! Podemos criar ambientes de hospedagem de forma rápida e fácil. 
+**Infraestrutura como código (IaC)** é uma realidade atualmente, e vem para ajudar a acelerar os processos na criação e configuração de ambientes de infraestrutura. Quando unimos o Terraform(automacao infra) com Ansible(automacao configuracões), temos uma solução perfeita! Podemos criar ambientes de hospedagem de forma rápida e fácil. 
 
 
-## Objetivo da Stack
+## Objetivo do Projeto
 
-O objetivo dessa stack é automatizar tudo, desde a criação do servidor, configuração do servidor e também configuração do DNS na plataforma da DigitalOcean. 
+O objetivo do projeto é automatizar tudo, desde a criação do servidor, configuração do servidor e também configuração do DNS na plataforma da Vultr.
 
 
-# Arquitetura da Stack
+# Arquitetura do Projeto
 
-A imagem abaixo representa como está arquitetada esta Stack de automação.
+A imagem abaixo representa como organizamos o projeto.
 
 ![alt text]()
 
@@ -20,11 +20,11 @@ A imagem abaixo representa como está arquitetada esta Stack de automação.
 ## Pré Requisitos
 
 A Stack está funcional seguindo os requisitos abaixo:
-* Chave API DigitalOcean : https://www.digitalocean.com/docs/apis-clis/api/create-personal-access-token
-* Domínio apontado para o DNS da DigitalOcean
+* Chave API Vultr : https://my.vultr.com/settings/#settingsapi
+* Domínio apontado para o DNS da Vultr
 * Terraform na máquina local
 
-ns1.digitalocean.com \ ns2.digitalocean.com \ ns3.digitalocean.com
+ns1.vultr.com \ ns2.vultr.com 
 
 
 ## Preparando o Ambiente (Seu Computador)
@@ -36,7 +36,7 @@ Faça o download do pacote referente ao sistema operacional que você utiliza.
 * Download: https://www.terraform.io/downloads.html
 
 
-#### 2) Download da Stack
+#### 2) Download do Projeto
 Você pode realizar o download da Stack através do link:
 
 * https://github.com/alejunio/terraform-ansible-wordpress-digitalocean/archive/main.zip
@@ -52,12 +52,12 @@ Você deve realizar configuracoes nos arquivos abaixo:
 
 - main.tf
 
-No campo de chave SSH, configure o caminho da sua chave SSH e/ou o nome da chave que você configurou. Recomendo inserir a chave no diretório (SSH).
+No campo de chave SSH, insira o conteúdo em texto da sua chave pública.
 
 
 - variable.tf
 
-No arquivo variable.tf você vai configurar a chave de API da DigitalOcean, e o domínio do site que você quer configurar.
+No arquivo variable.tf você vai configurar a chave de API da Vultr, e o domínio do site que você quer configurar.
 
 
 ### Arquivos de Configuração Ansible
@@ -85,9 +85,9 @@ Edite o arquivo de variaveis:
  email: 
 ```
 
-## Deploy Stack
+## Deploy da Stack
 
-Após ter ajustado todas as configurações necessárias para o funcionamento da stack e ter configurado o DNS do seu domínio apontando para a DigitalOcean, você poderá executar a stack para criar o ambiente.
+Após ter ajustado todas as configurações necessárias para o funcionamento da stack e ter configurado o DNS do seu domínio apontando para a Vultr, você poderá executar a stack para criar o ambiente.
 
 Para executar a stack, abra o terminal (cmd, shell, etc) e navegue até a pasta do projeto que você fez o download. Exemplo abaixo:
 ![alt text]()
@@ -111,6 +111,7 @@ Após finalizar o deploy, você verá uma mensagem similar/igual a essa abaixo:
 ![alt text]()
 
 
+
 ## Atenção
 A Stack está funcional, mas ainda está em desenvolvimento. Ideias e planos para a Stack:
 
@@ -119,20 +120,9 @@ A Stack está funcional, mas ainda está em desenvolvimento. Ideias e planos par
  - [x] PHP [ 7.2 ]
  - [x] MySQL [ 5.76 ]
  - [x] SSL Certbot Let's Encrypt
- - [ ] Seletor PHP
- - [ ] Seletor MySQL
  - [ ] Ioncube
  - [ ] Composer
- - [ ] Ferramentas de Segurança
- - [ ] Ferramenta para coleta de Logs 
- - [ ] Ferramenta para monitoramento do Servidor   
- - [ ] Backups remoto 
- - [ ] Criação de contas FTP
  - [ ] Secrets Ansible Vault
 
 * Terraform
  - [ ] Variaveis compartilhaveis com Ansible e vice versa
- - [ ] Seleção de Servidores
- - [ ] Seleção de Regiões
- - [ ] Load Balancing
- - [ ] Secrets Vault

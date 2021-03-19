@@ -115,7 +115,7 @@ Após finalizar o deploy, você verá uma mensagem similar/igual a essa abaixo:
 ## Atenção
 A Stack está funcional, mas ainda está em desenvolvimento. Ideias e planos para a Stack:
 
-* Ansible
+### Ansible
  - [x] Nginx [ 1.14 ]
  - [x] PHP [ 7.2 ]
  - [x] MySQL [ 5.76 ]
@@ -124,5 +124,5 @@ A Stack está funcional, mas ainda está em desenvolvimento. Ideias e planos par
  - [ ] Composer
  - [ ] Secrets Ansible Vault
 
-* Terraform
+### Terraform
  - [ ] Variaveis compartilhaveis com Ansible e vice versa
